@@ -2,13 +2,13 @@
     "name": "projecthp",
     "version": "0.0.1",
     "description": "",
-    "main": "/src/app.js",
+    "main": "./src/app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "release": "standard-version -a && git push --follow-tags origin master",
         "build": "tsc -p ./",
-        "start-linux": "sudo npm run build ; nodemon --watch src src/**.ts",
-        "start-wnd": "npm run build && nodemon --watch src src/**.ts"
+        "start-linux": "sudo npm run build ; nodemon --watch ./src **/**.ts",
+        "start-wnd": "npm run build && nodemon --watch ./src **/**.ts"
     },
     "repository": {
         "type": "git",

@@ -1,3 +1,3 @@
-class RootService {
+export class RootService {
     
 }
