@@ -1,6 +1,0 @@
-{
-    "Port": 5000,
-    "Ip": "127.0.0.1",
-    "OnLinux": false,
-    "dbName": "./SQLite.db"
-}

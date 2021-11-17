@@ -1,20 +1,17 @@
-import 'reflect-metadata'
-import { createExpressServer, useContainer } from 'routing-controllers'
-import { RootController } from './root/root.controller'
-const express = require('express')
-import Container from 'typedi'
+import { Response, Request } from "express";
 
-useContainer(Container)
+const express = require('express');
 
 export class Config {
-    public static data = require('../config.json');
-} 
+    public static data = require('../appConfig.json');
+}
 
-const app = createExpressServer({
-    cors: true,
-    controllers: [RootController]
+const app = express();
+app.get('/', (request: Request, response: Response) => {
+    response.send("Ok!");
+    response.end();
 })
 
-app.use('/static', express.static('src/static'))
-
-app.listen(Config.data.Port, Config.data.Ip)
+app.listen(Config.data.Port, Config.data.Ip, () => {
+    console.log(`Server successfullyt started on ${Config.data.Ip}:${Config.data.Port}.`);
+})
